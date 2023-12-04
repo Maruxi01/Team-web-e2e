@@ -1,4 +1,4 @@
-# E2E tests to team-web
+# E2E tests to team-web app
 
 ## Description
 
