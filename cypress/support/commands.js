@@ -33,12 +33,13 @@ Cypress.Commands.add("login", () => {
 			method: "POST",
 			url: `http://3.138.52.135:3000/auth/login`,
 			body: {
-				email: "SET_YOUR_EMAIL",
-				password: "SET_YOUR_PASSWORD",
+				email: "m.villagran02@ufromail.cl",
+				password: "D1I5biOY",
 			},
 		})
 		.then(({ body }) => {
 			const { token, user } = body;
+
 			cy.window().then((win) => {
 				win.localStorage.setItem("user", JSON.stringify({ token, user }));
 				return token;
@@ -59,3 +60,9 @@ Cypress.Commands.add("getClubs", (token) => {
 		return body.clubs;
 	});
 });
+
+// Cypress.Commands.add("addClub", (name, description, token) => {
+// 	cy.request({
+
+// 	})
+// });

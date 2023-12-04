@@ -1,4 +1,14 @@
 describe("Login", () => {
+	it("[SUCCESS L-1] login", () => {
+		cy.visit("/login",{
+			failOnStatusCode: false,
+		});
+
+		cy.login().then(() => {
+			cy.visit("/");
+		});
+	});
+
 	it("[Error L-2] invalid credentials", () => {
 		cy.visit("/login", {
 			failOnStatusCode: false,
