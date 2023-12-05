@@ -61,6 +61,21 @@ Cypress.Commands.add("getClubs", (token) => {
 	});
 });
 
+/**
+ * Command to get members of a club using the provided authentication token
+ */
+Cypress.Commands.add("getMembers", (token, id) => {
+	cy.request({
+		url: `http://3.138.52.135:3000/clubs/${id}/members`,
+		headers: {
+			Authorization: `Bearer ${token}`,
+		},
+	}).then(({ body }) => {
+		return body.members;
+	});
+});
+
+
 // Cypress.Commands.add("addClub", (name, description, token) => {
 // 	cy.request({
 
